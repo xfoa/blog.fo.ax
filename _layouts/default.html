@@ -18,7 +18,14 @@
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
+        <section id="pages">
+		{% assign navbar_pages = site.pages | where_exp: "page", "page.categories contains 'navbar'" | sort: "priority", "last" %}
+		{% for page in navbar_pages %}
+		<a href="{{ page.url }}">{{ page.title | downcase }}</a>
+		<span>\</span>
+		{% endfor %}
+		<a href="https://github.com/{{ site.github_username }}">github</a>
+        </section>
         <section id="downloads">
           {% if site.show_downloads %}
             <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
