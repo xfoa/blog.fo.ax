@@ -1,0 +1,51 @@
+---
+---
+$body-background: rgb(251 146 60) !default;
+$body-foreground: rgb(255 255 255) !default;
+$header: rgb(255 255 255) !default;
+$lowlight: rgb(80 80 80);
+@import "{{ site.theme }}";
+
+body {
+  background: $body-background;
+  color: $body-foreground;
+}
+
+header {
+  border-bottom: 1px dashed $header; //header;
+}
+
+header h1 {
+  color: $header;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px rgba(181, 232, 83, 0.1),
+               0 0 10px rgba(181, 232, 83, 0.1);
+}
+
+
+header h1:before {
+  content: "";
+}
+
+header h2 {
+  color: $lowlight;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(55 65 81);
+  text-shadow: 0 0 0px rgb(0,0,0,0);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code.highlighter-rouge {
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0px 3px;
+  margin: 0px -3px;
+  color: $lowlight;
+  border-radius: 2px;
+}
